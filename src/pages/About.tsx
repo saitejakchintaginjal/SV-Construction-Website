@@ -28,6 +28,15 @@ const values = [
   },
 ];
 
+// Placeholder milestones — replace years/descriptions with real company history.
+const timeline = [
+  { year: "2020", title: "Company Founded", description: "SV Construction and Interiors opens its doors, taking on its first residential project in Shivamogga." },
+  { year: "2021", title: "First Major Build", description: "Delivered our first large-format family residence, laying the foundation for the referral base that still drives most of our work." },
+  { year: "2022", title: "Interiors Division Added", description: "Expanded in-house capabilities to include interior design and finishing, becoming a full design-build partner." },
+  { year: "2024", title: "10+ Projects Milestone", description: "Crossed ten completed homes across Shivamogga, growing almost entirely through word of mouth." },
+  { year: "2026", title: "15+ Projects & Growing", description: "Now a growing team of 12+ delivering residential projects across the region." },
+];
+
 export default function About() {
   return (
     <>
@@ -84,6 +93,27 @@ export default function About() {
                 </div>
                 <h3>{value.title}</h3>
                 <p>{value.description}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <Reveal className="section-heading section-heading--center">
+            <span className="eyebrow">Our Journey</span>
+            <h2>Milestones Since 2020</h2>
+          </Reveal>
+          <div className="timeline">
+            {timeline.map((item, i) => (
+              <Reveal key={item.year} variant={i % 2 === 0 ? "left" : "right"} className="timeline__item">
+                <div className="timeline__year">{item.year}</div>
+                <div className="timeline__dot" />
+                <div className="timeline__content">
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
               </Reveal>
             ))}
           </div>

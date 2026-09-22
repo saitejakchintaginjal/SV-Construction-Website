@@ -1,9 +1,11 @@
 import Counter from "./Counter";
 import "./StatsBar.css";
 
+// Team size is a placeholder estimate — update with the real headcount.
 const stats = [
   { value: "2020", label: "Founded", animate: false },
   { value: "15+", label: "Projects Completed", animate: true },
+  { value: "12+", label: "Team Members", animate: true },
 ];
 
 export default function StatsBar() {
