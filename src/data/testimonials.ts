@@ -7,7 +7,7 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "SV Construction delivered our office build-out two weeks ahead of schedule without cutting a single corner. Communication was constant and the budget never drifted.",
+      "SV Construction and Interiors delivered our office build-out two weeks ahead of schedule without cutting a single corner. Communication was constant and the budget never drifted.",
     name: "Daniel Ortega",
     role: "Principal, Harborview Holdings",
   },

@@ -29,7 +29,7 @@ const values = [
 ];
 
 const timeline = [
-  { year: "2004", title: "Company Founded", description: "SV Construction opens its doors with a three-person crew and a single residential contract." },
+  { year: "2004", title: "Company Founded", description: "SV Construction and Interiors opens its doors with a three-person crew and a single residential contract." },
   { year: "2010", title: "Commercial Division Launched", description: "Expanded into office and retail construction, completing our first ground-up commercial build." },
   { year: "2015", title: "In-House Trades Expansion", description: "Brought electrical, mechanical, and plumbing crews in-house to tighten schedules and quality control." },
   { year: "2020", title: "100+ Projects Milestone", description: "Crossed 100 completed projects across residential, commercial, and industrial sectors." },
@@ -46,7 +46,7 @@ export default function About() {
   return (
     <>
       <PageHero
-        eyebrow="About SV Construction"
+        eyebrow="About SV Construction and Interiors"
         breadcrumb="About"
         title="Two Decades of Building With Integrity"
         description="What started as a three-person residential crew has grown into a full-service general contractor trusted with some of the region's most complex commercial and industrial projects."
@@ -60,7 +60,7 @@ export default function About() {
             <span className="eyebrow">Our Story</span>
             <h2>Built on Trust, Grown Through Referrals</h2>
             <p>
-              SV Construction was founded in 2004 on a simple premise: do the work right, communicate
+              SV Construction and Interiors was founded in 2004 on a simple premise: do the work right, communicate
               honestly, and the business will follow. More than two decades later, the majority of our
               projects still come from repeat clients and referrals — a track record we protect on
               every job site, every day.

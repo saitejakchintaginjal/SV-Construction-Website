@@ -82,7 +82,7 @@ export default function Contact() {
               </div>
             ))}
 
-            <div className="contact-map" role="img" aria-label="Map showing SV Construction office location">
+            <div className="contact-map" role="img" aria-label="Map showing SV Construction and Interiors office location">
               <MapPin size={28} className="contact-map__pin" />
               <span>4820 Industrial Pkwy, Suite 200, Springfield</span>
             </div>

@@ -35,7 +35,10 @@ export default function Navbar() {
             <HardHat size={20} strokeWidth={2.2} />
           </span>
           <span className="navbar__brand-text">
-            SV <strong>Construction</strong>
+            <span className="navbar__brand-line1">
+              SV <strong>Construction</strong>
+            </span>
+            <span className="navbar__brand-line2">and Interiors</span>
           </span>
         </NavLink>
 

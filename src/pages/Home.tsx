@@ -43,7 +43,7 @@ export default function Home() {
               Building the Places <span>Where Life Happens</span>
             </h1>
             <p className="hero__text-in">
-              SV Construction delivers residential, commercial, and industrial projects with
+              SV Construction and Interiors delivers residential, commercial, and industrial projects with
               precision scheduling, transparent budgets, and craftsmanship built to last.
             </p>
             <div className="hero__actions hero__actions-in">
@@ -125,7 +125,7 @@ export default function Home() {
       <section className="section section--alt why-us">
         <div className="container why-us__grid">
           <Reveal variant="left" className="why-us__content">
-            <span className="eyebrow">Why Choose SV Construction</span>
+            <span className="eyebrow">Why Choose SV Construction and Interiors</span>
             <h2>A Partner You Can Trust From Blueprint to Handoff</h2>
             <p>
               We built our reputation on doing what we say we'll do — clear communication, honest

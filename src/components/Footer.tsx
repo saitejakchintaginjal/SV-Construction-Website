@@ -16,7 +16,7 @@ export default function Footer() {
               <HardHat size={20} strokeWidth={2.2} />
             </span>
             <span>
-              SV <strong>Construction</strong>
+              SV <strong>Construction and Interiors</strong>
             </span>
           </Link>
           <p>
@@ -73,7 +73,7 @@ export default function Footer() {
 
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
-          <p>© {year} SV Construction. All rights reserved.</p>
+          <p>© {year} SV Construction and Interiors. All rights reserved.</p>
           <p>License #GC-0198374 · Bonded &amp; Insured</p>
         </div>
       </div>
