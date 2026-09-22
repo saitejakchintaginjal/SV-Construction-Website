@@ -1,0 +1,42 @@
+.cta {
+  background: linear-gradient(120deg, var(--color-navy-900) 0%, var(--color-navy-700) 100%);
+}
+
+.cta__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 64px 24px;
+  flex-wrap: wrap;
+}
+
+.cta h2 {
+  color: #fff;
+  font-size: clamp(24px, 2.6vw, 32px);
+  font-weight: 700;
+  max-width: 480px;
+  margin-bottom: 10px;
+}
+
+.cta p {
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 440px;
+  font-size: 15.5px;
+}
+
+.cta__actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.cta__phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+}
