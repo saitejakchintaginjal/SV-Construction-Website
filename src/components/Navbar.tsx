@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { Menu, X, Phone, HardHat } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import "./Navbar.css";
 
 const links = [
@@ -31,9 +31,7 @@ export default function Navbar() {
     <header className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <div className="container navbar__inner">
         <NavLink to="/" className="navbar__brand" onClick={() => setOpen(false)}>
-          <span className="navbar__brand-icon">
-            <HardHat size={20} strokeWidth={2.2} />
-          </span>
+          <img src="/logo.webp" alt="SV Construction and Interiors" className="navbar__brand-logo" />
           <span className="navbar__brand-text">
             <span className="navbar__brand-line1">
               SV <strong>Construction</strong>

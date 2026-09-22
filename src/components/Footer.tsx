@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { HardHat, Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import { services } from "../data/services";
 import { FacebookIcon, LinkedinIcon, InstagramIcon, WhatsAppIcon } from "./brand-icons";
 import "./Footer.css";
@@ -12,9 +12,7 @@ export default function Footer() {
       <div className="container footer__grid">
         <div className="footer__col footer__col--brand">
           <Link to="/" className="footer__brand">
-            <span className="footer__brand-icon">
-              <HardHat size={20} strokeWidth={2.2} />
-            </span>
+            <img src="/logo.webp" alt="SV Construction and Interiors" className="footer__brand-logo" />
             <span>
               SV <strong>Construction and Interiors</strong>
             </span>
