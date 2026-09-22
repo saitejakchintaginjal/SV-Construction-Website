@@ -2,10 +2,8 @@ import Counter from "./Counter";
 import "./StatsBar.css";
 
 const stats = [
-  { value: "20+", label: "Years in Business" },
-  { value: "340+", label: "Projects Delivered" },
-  { value: "98%", label: "On-Time Completion" },
-  { value: "45", label: "Skilled Tradespeople" },
+  { value: "2020", label: "Founded", animate: false },
+  { value: "15+", label: "Projects Completed", animate: true },
 ];
 
 export default function StatsBar() {
@@ -15,7 +13,7 @@ export default function StatsBar() {
         {stats.map((stat) => (
           <div key={stat.label} className="stats-bar__item">
             <span className="stats-bar__value">
-              <Counter value={stat.value} />
+              {stat.animate ? <Counter value={stat.value} /> : stat.value}
             </span>
             <span className="stats-bar__label">{stat.label}</span>
           </div>

@@ -20,12 +20,12 @@ const whyUs = [
   {
     icon: Clock,
     title: "On-Time, On-Budget",
-    description: "98% of our projects finish on schedule thanks to disciplined project management and planning.",
+    description: "Disciplined project management and clear scheduling keep every build on track from groundbreaking to handoff.",
   },
   {
     icon: Award,
-    title: "20+ Years of Craftsmanship",
-    description: "Two decades of hands-on experience across residential, commercial, and industrial builds.",
+    title: "Hands-On Craftsmanship",
+    description: "Founded in 2020, we've grown through referrals by treating every home like it's our own.",
   },
 ];
 
@@ -145,16 +145,12 @@ export default function Home() {
           </Reveal>
           <Reveal variant="right" delay={120} className="why-us__visual">
             <div className="why-us__visual-block why-us__visual-block--1">
-              <span className="why-us__visual-value"><Counter value="340+" /></span>
+              <span className="why-us__visual-value"><Counter value="15+" /></span>
               <span>Projects Completed</span>
             </div>
             <div className="why-us__visual-block why-us__visual-block--2">
-              <span className="why-us__visual-value"><Counter value="4.9/5" /></span>
-              <span>Average Client Rating</span>
-            </div>
-            <div className="why-us__visual-block why-us__visual-block--3">
-              <span className="why-us__visual-value"><Counter value="0" /></span>
-              <span>Lost-Time Incidents (2024)</span>
+              <span className="why-us__visual-value">2020</span>
+              <span>Founded</span>
             </div>
           </Reveal>
         </div>

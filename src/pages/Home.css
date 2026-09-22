@@ -340,9 +340,6 @@
   color: var(--color-navy-950);
 }
 
-.why-us__visual-block--3 {
-  background: linear-gradient(120deg, #1f3a5f, #142033);
-}
 
 @media (max-width: 980px) {
   .hero__inner {

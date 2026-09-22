@@ -24,16 +24,8 @@ const values = [
   {
     icon: Users,
     title: "Safety First",
-    description: "Zero lost-time incidents in 2024. Every crew is trained, certified, and equipped properly.",
+    description: "Every crew is trained, certified, and equipped to work safely on every site, every day.",
   },
-];
-
-const timeline = [
-  { year: "2004", title: "Company Founded", description: "SV Construction and Interiors opens its doors with a three-person crew and a single residential contract." },
-  { year: "2010", title: "Commercial Division Launched", description: "Expanded into office and retail construction, completing our first ground-up commercial build." },
-  { year: "2015", title: "In-House Trades Expansion", description: "Brought electrical, mechanical, and plumbing crews in-house to tighten schedules and quality control." },
-  { year: "2020", title: "100+ Projects Milestone", description: "Crossed 100 completed projects across residential, commercial, and industrial sectors." },
-  { year: "2024", title: "340+ Projects & Growing", description: "Now a 45-person team delivering projects across the region with a 98% on-time completion rate." },
 ];
 
 export default function About() {
@@ -42,8 +34,8 @@ export default function About() {
       <PageHero
         eyebrow="About SV Construction and Interiors"
         breadcrumb="About"
-        title="Two Decades of Building With Integrity"
-        description="What started as a three-person residential crew has grown into a full-service general contractor trusted with some of the region's most complex commercial and industrial projects."
+        title="Building With Integrity Since 2020"
+        description="From our first residential project to today, we've grown into a trusted general contractor known for craftsmanship, clear communication, and finishing what we start."
       />
 
       <StatsBar />
@@ -54,15 +46,13 @@ export default function About() {
             <span className="eyebrow">Our Story</span>
             <h2>Built on Trust, Grown Through Referrals</h2>
             <p>
-              SV Construction and Interiors was founded in 2004 on a simple premise: do the work right, communicate
-              honestly, and the business will follow. More than two decades later, the majority of our
-              projects still come from repeat clients and referrals — a track record we protect on
-              every job site, every day.
+              SV Construction and Interiors was founded in 2020 on a simple premise: do the work right, communicate
+              honestly, and the business will follow. Since then, the majority of our projects have come from
+              repeat clients and referrals — a track record we protect on every job site, every day.
             </p>
             <p>
-              Today we run in-house residential, commercial, and industrial divisions supported by
-              licensed electrical, mechanical, and plumbing crews — giving clients a single accountable
-              partner instead of a patchwork of subcontractors.
+              We run in-house residential divisions supported by licensed electrical, mechanical, and plumbing
+              crews — giving clients a single accountable partner instead of a patchwork of subcontractors.
             </p>
           </Reveal>
           <Reveal variant="right" delay={120} className="about-intro__panel">
@@ -94,27 +84,6 @@ export default function About() {
                 </div>
                 <h3>{value.title}</h3>
                 <p>{value.description}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container">
-          <Reveal className="section-heading section-heading--center">
-            <span className="eyebrow">Our Journey</span>
-            <h2>Two Decades of Milestones</h2>
-          </Reveal>
-          <div className="timeline">
-            {timeline.map((item, i) => (
-              <Reveal key={item.year} variant={i % 2 === 0 ? "left" : "right"} className="timeline__item">
-                <div className="timeline__year">{item.year}</div>
-                <div className="timeline__dot" />
-                <div className="timeline__content">
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </div>
               </Reveal>
             ))}
           </div>
