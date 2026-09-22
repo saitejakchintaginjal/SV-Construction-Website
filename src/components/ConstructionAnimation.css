@@ -1,0 +1,185 @@
+.construction-scene {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.construction-scene__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Clouds drifting across the sky */
+.cs-cloud {
+  animation: cloudDrift linear infinite;
+}
+
+.cs-cloud--1 {
+  animation-duration: 42s;
+  animation-delay: -6s;
+}
+
+.cs-cloud--2 {
+  animation-duration: 58s;
+  animation-delay: -20s;
+}
+
+.cs-cloud--3 {
+  animation-duration: 50s;
+  animation-delay: -34s;
+}
+
+@keyframes cloudDrift {
+  from {
+    transform: translateX(-160px);
+  }
+  to {
+    transform: translateX(1360px);
+  }
+}
+
+/* Crane beacon light */
+.cs-crane-light {
+  animation: beacon 1.3s ease-in-out infinite alternate;
+}
+
+@keyframes beacon {
+  from {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Trolley sliding along the jib */
+.cs-trolley {
+  animation: trolleySlide 5s ease-in-out infinite;
+  transform-box: view-box;
+}
+
+@keyframes trolleySlide {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(88px);
+  }
+}
+
+/* Hook lifting motion */
+.cs-hook {
+  animation: hookLift 2.4s ease-in-out infinite;
+  transform-box: view-box;
+}
+
+@keyframes hookLift {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(16px);
+  }
+}
+
+/* Building floors rising into place, looping like a construction timelapse */
+.cs-floor {
+  transform-box: view-box;
+  transform-origin: center;
+  animation: floorRise 7s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.cs-floor--1 { animation-delay: 0s; }
+.cs-floor--2 { animation-delay: 0.35s; }
+.cs-floor--3 { animation-delay: 0.7s; }
+.cs-floor--4 { animation-delay: 1.05s; }
+.cs-floor--5 { animation-delay: 1.4s; }
+.cs-floor--scaffold { animation: scaffoldRise 7s cubic-bezier(0.22, 1, 0.36, 1) infinite; animation-delay: 1.6s; }
+
+@keyframes floorRise {
+  0% {
+    opacity: 0;
+    transform: translateY(26px) scaleY(0.7);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+  88% {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+  96%, 100% {
+    opacity: 0;
+    transform: translateY(26px) scaleY(0.7);
+  }
+}
+
+@keyframes scaffoldRise {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  8% {
+    opacity: 0.85;
+    transform: translateY(0);
+  }
+  88% {
+    opacity: 0.85;
+    transform: translateY(0);
+  }
+  96%, 100% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+/* Delivery truck driving across the site */
+.cs-truck {
+  animation: truckDrive 9s ease-in-out infinite;
+  transform-box: view-box;
+}
+
+@keyframes truckDrive {
+  0%, 8% {
+    transform: translateX(0);
+  }
+  45%, 55% {
+    transform: translateX(400px);
+  }
+  92%, 100% {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .construction-scene {
+    height: 200px;
+  }
+}
+
+@media (max-width: 560px) {
+  .construction-scene {
+    height: 160px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-cloud,
+  .cs-crane-light,
+  .cs-trolley,
+  .cs-hook,
+  .cs-floor,
+  .cs-floor--scaffold,
+  .cs-truck {
+    animation: none;
+  }
+
+  .cs-floor,
+  .cs-floor--scaffold {
+    opacity: 1;
+    transform: none;
+  }
+}

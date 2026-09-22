@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { Phone, Mail, MapPin, Clock, CheckCircle2 } from "lucide-react";
 import PageHero from "../components/PageHero";
+import Reveal from "../components/Reveal";
 import { services } from "../data/services";
 import "./Contact.css";
 
@@ -64,9 +65,9 @@ export default function Contact() {
 
       <section className="section">
         <div className="container contact-grid">
-          <div className="contact-details">
-            {contactDetails.map((detail) => (
-              <div key={detail.title} className="contact-detail-card">
+          <Reveal variant="left" className="contact-details">
+            {contactDetails.map((detail, i) => (
+              <div key={detail.title} className="contact-detail-card" style={{ transitionDelay: `${i * 70}ms` }}>
                 <div className="icon-badge">
                   <detail.icon size={20} />
                 </div>
@@ -82,12 +83,12 @@ export default function Contact() {
             ))}
 
             <div className="contact-map" role="img" aria-label="Map showing SV Construction office location">
-              <MapPin size={28} />
+              <MapPin size={28} className="contact-map__pin" />
               <span>4820 Industrial Pkwy, Suite 200, Springfield</span>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="contact-form-wrap">
+          <Reveal variant="right" delay={120} className="contact-form-wrap">
             {submitted && (
               <div className="contact-success">
                 <CheckCircle2 size={20} />
@@ -100,7 +101,7 @@ export default function Contact() {
 
             <form className="contact-form" onSubmit={handleSubmit} noValidate>
               <div className="contact-form__row">
-                <div className="contact-form__field">
+                <div className={`contact-form__field ${errors.name ? "contact-form__field--error" : ""}`}>
                   <label htmlFor="name">Full Name</label>
                   <input
                     id="name"
@@ -111,7 +112,7 @@ export default function Contact() {
                   />
                   {errors.name && <span className="contact-form__error">{errors.name}</span>}
                 </div>
-                <div className="contact-form__field">
+                <div className={`contact-form__field ${errors.email ? "contact-form__field--error" : ""}`}>
                   <label htmlFor="email">Email Address</label>
                   <input
                     id="email"
@@ -135,7 +136,7 @@ export default function Contact() {
                     placeholder="(800) 555-0142"
                   />
                 </div>
-                <div className="contact-form__field">
+                <div className={`contact-form__field ${errors.service ? "contact-form__field--error" : ""}`}>
                   <label htmlFor="service">Service Needed</label>
                   <select id="service" value={form.service} onChange={handleChange("service")}>
                     <option value="">Select a service</option>
@@ -149,7 +150,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="contact-form__field">
+              <div className={`contact-form__field ${errors.message ? "contact-form__field--error" : ""}`}>
                 <label htmlFor="message">Project Details</label>
                 <textarea
                   id="message"
@@ -165,7 +166,7 @@ export default function Contact() {
                 Submit Request
               </button>
             </form>
-          </div>
+          </Reveal>
         </div>
       </section>
     </>

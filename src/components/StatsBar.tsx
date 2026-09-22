@@ -1,3 +1,4 @@
+import Counter from "./Counter";
 import "./StatsBar.css";
 
 const stats = [
@@ -13,7 +14,9 @@ export default function StatsBar() {
       <div className="container stats-bar__grid">
         {stats.map((stat) => (
           <div key={stat.label} className="stats-bar__item">
-            <span className="stats-bar__value">{stat.value}</span>
+            <span className="stats-bar__value">
+              <Counter value={stat.value} />
+            </span>
             <span className="stats-bar__label">{stat.label}</span>
           </div>
         ))}

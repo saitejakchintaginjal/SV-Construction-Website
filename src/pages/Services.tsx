@@ -2,6 +2,7 @@ import { ClipboardList, FileSearch, HardHat, KeyRound } from "lucide-react";
 import PageHero from "../components/PageHero";
 import ServiceCard from "../components/ServiceCard";
 import CTASection from "../components/CTASection";
+import Reveal from "../components/Reveal";
 import { services } from "../data/services";
 import "./Services.css";
 
@@ -25,8 +26,10 @@ export default function Services() {
       <section className="section">
         <div className="container">
           <div className="grid grid--3">
-            {services.map((service) => (
-              <ServiceCard key={service.slug} service={service} />
+            {services.map((service, i) => (
+              <Reveal key={service.slug} delay={(i % 3) * 90}>
+                <ServiceCard service={service} />
+              </Reveal>
             ))}
           </div>
         </div>
@@ -34,21 +37,22 @@ export default function Services() {
 
       <section className="section section--alt">
         <div className="container">
-          <div className="section-heading section-heading--center">
+          <Reveal className="section-heading section-heading--center">
             <span className="eyebrow">How We Work</span>
             <h2>Our Process</h2>
             <p>A clear, repeatable process that keeps every project on schedule and on budget.</p>
-          </div>
+          </Reveal>
           <div className="process">
-            {process.map((item) => (
-              <div key={item.step} className="process__item">
+            {process.map((item, i) => (
+              <Reveal key={item.step} delay={i * 110} className="process__item">
                 <div className="process__step">{item.step}</div>
                 <div className="icon-badge icon-badge--navy">
                   <item.icon size={22} />
                 </div>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
-              </div>
+                {i < process.length - 1 && <div className="process__connector" />}
+              </Reveal>
             ))}
           </div>
         </div>

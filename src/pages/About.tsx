@@ -2,6 +2,7 @@ import { Target, Eye, HeartHandshake, Users } from "lucide-react";
 import PageHero from "../components/PageHero";
 import StatsBar from "../components/StatsBar";
 import CTASection from "../components/CTASection";
+import Reveal from "../components/Reveal";
 import "./About.css";
 
 const values = [
@@ -55,7 +56,7 @@ export default function About() {
 
       <section className="section about-intro">
         <div className="container about-intro__grid">
-          <div>
+          <Reveal variant="left">
             <span className="eyebrow">Our Story</span>
             <h2>Built on Trust, Grown Through Referrals</h2>
             <p>
@@ -69,8 +70,8 @@ export default function About() {
               licensed electrical, mechanical, and plumbing crews — giving clients a single accountable
               partner instead of a patchwork of subcontractors.
             </p>
-          </div>
-          <div className="about-intro__panel">
+          </Reveal>
+          <Reveal variant="right" delay={120} className="about-intro__panel">
             <h3>Mission</h3>
             <p>
               To deliver construction projects that exceed expectations in quality, safety, and
@@ -81,25 +82,25 @@ export default function About() {
               To be the region's most trusted general contractor, known equally for the buildings we
               construct and the way we treat the people who commission them.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       <section className="section section--alt">
         <div className="container">
-          <div className="section-heading section-heading--center">
+          <Reveal className="section-heading section-heading--center">
             <span className="eyebrow">What Drives Us</span>
             <h2>Our Core Values</h2>
-          </div>
+          </Reveal>
           <div className="grid grid--4">
-            {values.map((value) => (
-              <div key={value.title} className="value-card">
+            {values.map((value, i) => (
+              <Reveal key={value.title} delay={i * 90} className="value-card">
                 <div className="icon-badge">
                   <value.icon size={22} />
                 </div>
                 <h3>{value.title}</h3>
                 <p>{value.description}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -107,20 +108,20 @@ export default function About() {
 
       <section className="section">
         <div className="container">
-          <div className="section-heading section-heading--center">
+          <Reveal className="section-heading section-heading--center">
             <span className="eyebrow">Our Journey</span>
             <h2>Two Decades of Milestones</h2>
-          </div>
+          </Reveal>
           <div className="timeline">
-            {timeline.map((item) => (
-              <div key={item.year} className="timeline__item">
+            {timeline.map((item, i) => (
+              <Reveal key={item.year} variant={i % 2 === 0 ? "left" : "right"} className="timeline__item">
                 <div className="timeline__year">{item.year}</div>
                 <div className="timeline__dot" />
                 <div className="timeline__content">
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -128,18 +129,18 @@ export default function About() {
 
       <section className="section section--alt">
         <div className="container">
-          <div className="section-heading section-heading--center">
+          <Reveal className="section-heading section-heading--center">
             <span className="eyebrow">Leadership</span>
             <h2>The Team Behind Every Build</h2>
-          </div>
+          </Reveal>
           <div className="grid grid--3">
-            {leadership.map((person) => (
-              <div key={person.name} className="leader-card">
+            {leadership.map((person, i) => (
+              <Reveal key={person.name} delay={i * 110} variant="scale" className="leader-card">
                 <div className="leader-card__avatar">{person.name.split(" ").map((n) => n[0]).join("")}</div>
                 <h3>{person.name}</h3>
                 <p className="leader-card__role">{person.role}</p>
                 <p>{person.bio}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

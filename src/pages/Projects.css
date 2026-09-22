@@ -6,6 +6,9 @@
 }
 
 .projects-filter__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background: var(--color-surface);
   border: 1px solid var(--color-line);
   color: var(--color-ink-700);
@@ -14,17 +17,41 @@
   font-size: 14px;
   padding: 10px 20px;
   border-radius: 999px;
-  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
 }
 
 .projects-filter__btn:hover {
   border-color: var(--color-navy-700);
+  transform: translateY(-2px);
+}
+
+.projects-filter__btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.projects-filter__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--color-surface-alt);
+  color: var(--color-ink-500);
+  font-size: 12px;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .projects-filter__btn--active {
   background: var(--color-navy-900);
   border-color: var(--color-navy-900);
   color: #fff;
+}
+
+.projects-filter__btn--active .projects-filter__count {
+  background: rgba(245, 165, 36, 0.2);
+  color: var(--color-amber-500);
 }
 
 .projects-empty {

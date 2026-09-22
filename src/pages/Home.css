@@ -22,7 +22,46 @@
   grid-template-columns: 1.15fr 0.85fr;
   gap: 56px;
   align-items: center;
-  padding: 72px 24px 96px;
+  padding: 72px 24px 48px;
+}
+
+/* Hero entrance choreography */
+.hero__eyebrow-in,
+.hero__title-in,
+.hero__text-in,
+.hero__actions-in,
+.hero__checklist-in,
+.hero__card-in {
+  animation: heroRise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero__eyebrow-in { animation-delay: 0.05s; }
+.hero__title-in { animation-delay: 0.15s; }
+.hero__text-in { animation-delay: 0.28s; }
+.hero__actions-in { animation-delay: 0.4s; }
+.hero__checklist-in { animation-delay: 0.52s; }
+.hero__card-in { animation-delay: 0.35s; }
+
+@keyframes heroRise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__eyebrow-in,
+  .hero__title-in,
+  .hero__text-in,
+  .hero__actions-in,
+  .hero__checklist-in,
+  .hero__card-in {
+    animation: none;
+  }
 }
 
 .hero__content .eyebrow {
@@ -81,6 +120,13 @@
   backdrop-filter: blur(12px);
   border-radius: var(--radius-lg);
   padding: 28px;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.hero__card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(245, 165, 36, 0.4);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
 }
 
 .hero__card-header {
@@ -96,12 +142,28 @@
 }
 
 .hero__card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   background: rgba(52, 199, 89, 0.16);
   color: #4ade80;
   padding: 4px 10px;
   border-radius: 999px;
   text-transform: none;
   letter-spacing: 0;
+}
+
+.hero__card-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  animation: badgePulse 1.6s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.4); }
 }
 
 .hero__card-row {
@@ -132,8 +194,36 @@
 
 .hero__progress-fill {
   height: 100%;
+  width: 82%;
   background: linear-gradient(90deg, var(--color-amber-600), var(--color-amber-500));
+  background-size: 200% 100%;
   border-radius: 999px;
+  animation: progressFill 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both, progressShimmer 2.5s linear infinite;
+  transform-origin: left;
+}
+
+@keyframes progressFill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 82%;
+  }
+}
+
+@keyframes progressShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__progress-fill {
+    animation: none;
+  }
+
+  .hero__card-badge-dot {
+    animation: none;
+  }
 }
 
 .hero__card-grid {
@@ -214,6 +304,12 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+}
+
+.why-us__visual-block:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: var(--shadow-lg);
 }
 
 .why-us__visual-block span:last-child {

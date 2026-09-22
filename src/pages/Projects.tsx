@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import PageHero from "../components/PageHero";
 import ProjectCard from "../components/ProjectCard";
 import CTASection from "../components/CTASection";
+import Reveal from "../components/Reveal";
 import { projects } from "../data/projects";
 import "./Projects.css";
 
@@ -35,13 +36,16 @@ export default function Projects() {
                 onClick={() => setActive(category)}
               >
                 {category}
+                <span className="projects-filter__count">{category === "All" ? projects.length : projects.filter((p) => p.category === category).length}</span>
               </button>
             ))}
           </div>
 
-          <div className="grid grid--3">
-            {filtered.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
+          <div className="grid grid--3" key={active}>
+            {filtered.map((project, i) => (
+              <Reveal key={project.slug} delay={i * 80} variant="scale">
+                <ProjectCard project={project} />
+              </Reveal>
             ))}
           </div>
 

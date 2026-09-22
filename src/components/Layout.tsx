@@ -2,6 +2,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import FloatingActions from "./FloatingActions";
 
 export default function Layout() {
   const location = useLocation();
@@ -15,10 +16,11 @@ export default function Layout() {
   return (
     <div className="app-shell">
       <Navbar />
-      <main>
+      <main key={location.pathname} className="page-transition">
         <Outlet />
       </main>
       <Footer />
+      <FloatingActions />
     </div>
   );
 }

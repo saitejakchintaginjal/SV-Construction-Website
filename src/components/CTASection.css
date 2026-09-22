@@ -1,8 +1,36 @@
 .cta {
-  background: linear-gradient(120deg, var(--color-navy-900) 0%, var(--color-navy-700) 100%);
+  position: relative;
+  background: linear-gradient(120deg, var(--color-navy-900) 0%, var(--color-navy-700) 50%, var(--color-navy-900) 100%);
+  background-size: 200% 200%;
+  animation: ctaGradientShift 10s ease infinite;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(245, 165, 36, 0.35) 1.5px, transparent 1.5px);
+  background-size: 26px 26px;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+@keyframes ctaGradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta {
+    animation: none;
+  }
 }
 
 .cta__inner {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
