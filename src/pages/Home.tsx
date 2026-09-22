@@ -3,14 +3,12 @@ import { ArrowRight, CheckCircle2, ShieldCheck, Clock, Award } from "lucide-reac
 import StatsBar from "../components/StatsBar";
 import ServiceCard from "../components/ServiceCard";
 import ProjectCard from "../components/ProjectCard";
-import TestimonialCard from "../components/TestimonialCard";
 import CTASection from "../components/CTASection";
 import ConstructionAnimation from "../components/ConstructionAnimation";
 import Counter from "../components/Counter";
 import Reveal from "../components/Reveal";
 import { services } from "../data/services";
 import { projects } from "../data/projects";
-import { testimonials } from "../data/testimonials";
 import "./Home.css";
 
 const whyUs = [
@@ -69,7 +67,7 @@ export default function Home() {
               </span>
             </div>
             <div className="hero__card-row">
-              <span>Harborview Office Tower</span>
+              <span>Kanasu Residence</span>
               <span>82%</span>
             </div>
             <div className="hero__progress">
@@ -81,7 +79,7 @@ export default function Home() {
                 <span className="hero__card-label">Months In</span>
               </div>
               <div>
-                <span className="hero__card-value">48k</span>
+                <span className="hero__card-value">4,200</span>
                 <span className="hero__card-label">Sq Ft</span>
               </div>
               <div>
@@ -180,22 +178,6 @@ export default function Home() {
             <Link to="/projects" className="btn btn--outline-dark">
               View Full Portfolio <ArrowRight size={16} />
             </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section--navy">
-        <div className="container">
-          <Reveal className="section-heading section-heading--center">
-            <span className="eyebrow">Client Feedback</span>
-            <h2>What Our Clients Say</h2>
-          </Reveal>
-          <div className="grid grid--3">
-            {testimonials.map((testimonial, i) => (
-              <Reveal key={testimonial.name} delay={i * 100}>
-                <TestimonialCard testimonial={testimonial} />
-              </Reveal>
-            ))}
           </div>
         </div>
       </section>

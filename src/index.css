@@ -262,8 +262,7 @@ button {
 .service-card:hover .icon-badge,
 .value-card:hover .icon-badge,
 .process__item:hover .icon-badge,
-.why-us__item:hover .icon-badge,
-.leader-card:hover .icon-badge {
+.why-us__item:hover .icon-badge {
   transform: rotate(-8deg) scale(1.1);
 }
 

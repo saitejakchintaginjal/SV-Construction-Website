@@ -63,7 +63,7 @@ export default function Footer() {
             </li>
             <li>
               <Mail size={16} />
-              <a href="mailto:projects@svconstruction.com">projects@svconstruction.com</a>
+              <a href="mailto:svconstruction267@gmail.com">svconstruction267@gmail.com</a>
             </li>
           </ul>
         </div>
@@ -72,7 +72,7 @@ export default function Footer() {
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
           <p>© {year} SV Construction and Interiors. All rights reserved.</p>
-          <p>License #GC-0198374 · Bonded &amp; Insured</p>
+          <p>Licensed, Bonded &amp; Insured</p>
         </div>
       </div>
     </footer>

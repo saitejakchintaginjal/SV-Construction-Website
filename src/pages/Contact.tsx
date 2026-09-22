@@ -17,7 +17,7 @@ const initialState: FormState = { name: "", email: "", phone: "", service: "", m
 
 const contactDetails = [
   { icon: Phone, title: "Call Us", value: "+91 99866 80832", href: "tel:+919986680832" },
-  { icon: Mail, title: "Email Us", value: "projects@svconstruction.com", href: "mailto:projects@svconstruction.com" },
+  { icon: Mail, title: "Email Us", value: "svconstruction267@gmail.com", href: "mailto:svconstruction267@gmail.com" },
   { icon: MapPin, title: "Visit Us", value: "Kadam Nivas, Mangala Mandir Road, Behind Laxmi Rice Mill, Kirana Store, Alkola, Shivamogga - 577204" },
   { icon: Clock, title: "Office Hours", value: "Mon–Fri: 7:00 AM – 5:00 PM" },
 ];

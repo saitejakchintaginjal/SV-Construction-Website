@@ -36,12 +36,6 @@ const timeline = [
   { year: "2024", title: "340+ Projects & Growing", description: "Now a 45-person team delivering projects across the region with a 98% on-time completion rate." },
 ];
 
-const leadership = [
-  { name: "Sandra Vaughn", role: "Founder & CEO", bio: "20+ years leading commercial and residential builds from bid to handoff." },
-  { name: "Victor Alaniz", role: "VP of Operations", bio: "Oversees scheduling, subcontractor relationships, and field operations across all active sites." },
-  { name: "Renee Castillo", role: "Director of Safety & Compliance", bio: "Built SV's safety program from the ground up — zero lost-time incidents since 2022." },
-];
-
 export default function About() {
   return (
     <>
@@ -121,25 +115,6 @@ export default function About() {
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
                 </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section section--alt">
-        <div className="container">
-          <Reveal className="section-heading section-heading--center">
-            <span className="eyebrow">Leadership</span>
-            <h2>The Team Behind Every Build</h2>
-          </Reveal>
-          <div className="grid grid--3">
-            {leadership.map((person, i) => (
-              <Reveal key={person.name} delay={i * 110} variant="scale" className="leader-card">
-                <div className="leader-card__avatar">{person.name.split(" ").map((n) => n[0]).join("")}</div>
-                <h3>{person.name}</h3>
-                <p className="leader-card__role">{person.role}</p>
-                <p>{person.bio}</p>
               </Reveal>
             ))}
           </div>
