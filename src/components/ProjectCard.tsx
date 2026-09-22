@@ -1,31 +1,44 @@
-import { ArrowUpRight, MapPin } from "lucide-react";
+import { Images, MapPin, ZoomIn } from "lucide-react";
 import type { Project } from "../data/projects";
 import "./ProjectCard.css";
 
-export default function ProjectCard({ project }: { project: Project }) {
+interface ProjectCardProps {
+  project: Project;
+  onOpen?: (project: Project) => void;
+}
+
+export default function ProjectCard({ project, onOpen }: ProjectCardProps) {
+  const hasMultiple = project.images.length > 1;
+
   return (
-    <article className="project-card">
-      <div className="project-card__media" style={{ background: project.gradient }}>
+    <article className={`project-card ${onOpen ? "project-card--clickable" : ""}`}>
+      <button
+        type="button"
+        className="project-card__media"
+        onClick={() => onOpen?.(project)}
+        aria-label={`View photos of ${project.title}`}
+        disabled={!onOpen}
+      >
+        <img src={project.images[0]} alt={project.title} loading="lazy" />
+        <span className="project-card__scrim" />
         <span className="project-card__category">{project.category}</span>
-        <span className="project-card__year">{project.year}</span>
-        <div className="project-card__media-overlay">
-          <ArrowUpRight size={22} />
-        </div>
-      </div>
+        {hasMultiple && (
+          <span className="project-card__count">
+            <Images size={13} /> {project.images.length}
+          </span>
+        )}
+        {onOpen && (
+          <span className="project-card__media-overlay">
+            <ZoomIn size={22} />
+          </span>
+        )}
+      </button>
       <div className="project-card__body">
         <h3>{project.title}</h3>
         <p className="project-card__location">
           <MapPin size={14} /> {project.location}
         </p>
         <p>{project.summary}</p>
-        <div className="project-card__stats">
-          {project.stats.map((stat) => (
-            <div key={stat.label} className="project-card__stat">
-              <span className="project-card__stat-value">{stat.value}</span>
-              <span className="project-card__stat-label">{stat.label}</span>
-            </div>
-          ))}
-        </div>
       </div>
     </article>
   );

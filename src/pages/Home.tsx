@@ -167,7 +167,7 @@ export default function Home() {
           <Reveal className="section-heading section-heading--center">
             <span className="eyebrow">Featured Work</span>
             <h2>Recent Projects</h2>
-            <p>A look at some of the residential, commercial, and industrial builds we've recently delivered.</p>
+            <p>A look at some of the homes our team has recently designed and built.</p>
           </Reveal>
           <div className="grid grid--3">
             {projects.slice(0, 3).map((project, i) => (

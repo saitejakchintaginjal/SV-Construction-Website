@@ -14,9 +14,9 @@ export default function CTASection() {
           <Link to="/contact" className="btn btn--primary">
             Request a Free Estimate
           </Link>
-          <a href="tel:+18005550142" className="cta__phone">
+          <a href="tel:+919986680832" className="cta__phone">
             <PhoneCall size={18} />
-            (800) 555-0142
+            +91 99866 80832
           </a>
         </div>
       </div>

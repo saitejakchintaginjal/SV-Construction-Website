@@ -16,9 +16,9 @@ interface FormState {
 const initialState: FormState = { name: "", email: "", phone: "", service: "", message: "" };
 
 const contactDetails = [
-  { icon: Phone, title: "Call Us", value: "(800) 555-0142", href: "tel:+18005550142" },
+  { icon: Phone, title: "Call Us", value: "+91 99866 80832", href: "tel:+919986680832" },
   { icon: Mail, title: "Email Us", value: "projects@svconstruction.com", href: "mailto:projects@svconstruction.com" },
-  { icon: MapPin, title: "Visit Us", value: "4820 Industrial Pkwy, Suite 200, Springfield" },
+  { icon: MapPin, title: "Visit Us", value: "Kadam Nivas, Mangala Mandir Road, Behind Laxmi Rice Mill, Kirana Store, Alkola, Shivamogga - 577204" },
   { icon: Clock, title: "Office Hours", value: "Mon–Fri: 7:00 AM – 5:00 PM" },
 ];
 
@@ -84,7 +84,7 @@ export default function Contact() {
 
             <div className="contact-map" role="img" aria-label="Map showing SV Construction and Interiors office location">
               <MapPin size={28} className="contact-map__pin" />
-              <span>4820 Industrial Pkwy, Suite 200, Springfield</span>
+              <span>Kadam Nivas, Mangala Mandir Road, Behind Laxmi Rice Mill, Kirana Store, Alkola, Shivamogga - 577204</span>
             </div>
           </Reveal>
 
@@ -133,7 +133,7 @@ export default function Contact() {
                     type="tel"
                     value={form.phone}
                     onChange={handleChange("phone")}
-                    placeholder="(800) 555-0142"
+                    placeholder="+91 99866 80832"
                   />
                 </div>
                 <div className={`contact-form__field ${errors.service ? "contact-form__field--error" : ""}`}>

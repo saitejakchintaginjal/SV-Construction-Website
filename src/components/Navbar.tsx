@@ -54,9 +54,9 @@ export default function Navbar() {
         </nav>
 
         <div className="navbar__actions">
-          <a href="tel:+18005550142" className="navbar__phone">
+          <a href="tel:+919986680832" className="navbar__phone">
             <Phone size={16} />
-            <span>(800) 555-0142</span>
+            <span>+91 99866 80832</span>
           </a>
           <NavLink to="/contact" className="btn btn--primary btn--sm">
             Get a Quote
@@ -86,9 +86,9 @@ export default function Navbar() {
               {link.label}
             </NavLink>
           ))}
-          <a href="tel:+18005550142" className="navbar__phone navbar__phone--mobile">
+          <a href="tel:+919986680832" className="navbar__phone navbar__phone--mobile">
             <Phone size={16} />
-            <span>(800) 555-0142</span>
+            <span>+91 99866 80832</span>
           </a>
         </nav>
       )}

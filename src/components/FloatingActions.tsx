@@ -3,9 +3,9 @@ import { Phone, X, MessageSquareText, ArrowUp } from "lucide-react";
 import { WhatsAppIcon, InstagramIcon } from "./brand-icons";
 import "./FloatingActions.css";
 
-const WHATSAPP_URL = "https://wa.me/18005550142?text=Hi%20SV%20Construction%20and%20Interiors%2C%20I%27d%20like%20to%20get%20a%20quote.";
+const WHATSAPP_URL = "https://wa.me/919986680832?text=Hi%20SV%20Construction%20and%20Interiors%2C%20I%27d%20like%20to%20get%20a%20quote.";
 const INSTAGRAM_URL = "https://instagram.com/svconstruction";
-const CALL_URL = "tel:+18005550142";
+const CALL_URL = "tel:+919986680832";
 
 export default function FloatingActions() {
   const [open, setOpen] = useState(false);

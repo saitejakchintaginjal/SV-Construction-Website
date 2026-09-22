@@ -22,7 +22,7 @@ export default function Footer() {
             projects with uncompromising quality and transparent communication since 2004.
           </p>
           <div className="footer__social">
-            <a href="https://wa.me/18005550142" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><WhatsAppIcon /></a>
+            <a href="https://wa.me/919986680832" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><WhatsAppIcon /></a>
             <a href="https://instagram.com/svconstruction" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><InstagramIcon /></a>
             <a href="https://facebook.com/svconstruction" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><FacebookIcon /></a>
             <a href="https://linkedin.com/company/svconstruction" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><LinkedinIcon /></a>
@@ -55,11 +55,11 @@ export default function Footer() {
           <ul className="footer__contact">
             <li>
               <MapPin size={16} />
-              <span>4820 Industrial Pkwy, Suite 200, Springfield</span>
+              <span>Kadam Nivas, Mangala Mandir Road, Behind Laxmi Rice Mill, Kirana Store, Alkola, Shivamogga - 577204</span>
             </li>
             <li>
               <Phone size={16} />
-              <a href="tel:+18005550142">(800) 555-0142</a>
+              <a href="tel:+919986680832">+91 99866 80832</a>
             </li>
             <li>
               <Mail size={16} />

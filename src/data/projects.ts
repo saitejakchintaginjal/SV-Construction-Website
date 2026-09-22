@@ -3,89 +3,67 @@ export interface Project {
   title: string;
   category: "Residential" | "Commercial" | "Industrial" | "Renovation";
   location: string;
-  year: string;
   summary: string;
-  stats: { label: string; value: string }[];
-  gradient: string;
+  images: string[];
 }
 
 export const projects: Project[] = [
   {
-    slug: "riverside-family-residence",
-    title: "Riverside Family Residence",
+    slug: "kanasu-residence",
+    title: "Kanasu Residence",
     category: "Residential",
-    location: "Riverside County",
-    year: "2024",
-    summary: "A 4,200 sq ft custom home with energy-efficient framing and an open-concept living design.",
-    stats: [
-      { label: "Size", value: "4,200 sq ft" },
-      { label: "Duration", value: "8 months" },
+    location: "Shivamogga, Karnataka",
+    summary:
+      "A spacious family residence built for House No. 74 — featuring a private reading lounge, layered balconies, corten-style accents, and a bold corner facade.",
+    images: [
+      "/projects/kanasu-residence-day.jpg",
+      "/projects/kanasu-residence-night.jpg",
+      "/projects/kanasu-residence-lounge.jpg",
     ],
-    gradient: "linear-gradient(135deg, #1f3a5f 0%, #2c5282 100%)",
   },
   {
-    slug: "harborview-office-tower",
-    title: "Harborview Office Tower — Fit-Out",
-    category: "Commercial",
-    location: "Downtown Harbor District",
-    year: "2023",
-    summary: "Full tenant improvement across three floors of Class A office space, delivered ahead of schedule.",
-    stats: [
-      { label: "Size", value: "48,000 sq ft" },
-      { label: "Duration", value: "5 months" },
-    ],
-    gradient: "linear-gradient(135deg, #142033 0%, #1f3a5f 100%)",
-  },
-  {
-    slug: "north-ridge-distribution-center",
-    title: "North Ridge Distribution Center",
-    category: "Industrial",
-    location: "North Ridge Industrial Park",
-    year: "2023",
-    summary: "Ground-up 90,000 sq ft warehouse and distribution facility with reinforced loading infrastructure.",
-    stats: [
-      { label: "Size", value: "90,000 sq ft" },
-      { label: "Duration", value: "11 months" },
-    ],
-    gradient: "linear-gradient(135deg, #3a2a17 0%, #7a4a1f 100%)",
-  },
-  {
-    slug: "maple-street-brownstone",
-    title: "Maple Street Brownstone Restoration",
-    category: "Renovation",
-    location: "Old Town Historic District",
-    year: "2022",
-    summary: "Full structural retrofit and historic facade restoration preserving original architectural detail.",
-    stats: [
-      { label: "Size", value: "3,100 sq ft" },
-      { label: "Duration", value: "6 months" },
-    ],
-    gradient: "linear-gradient(135deg, #2c1f14 0%, #5c3a1e 100%)",
-  },
-  {
-    slug: "sunset-plaza-retail",
-    title: "Sunset Plaza Retail Center",
-    category: "Commercial",
-    location: "Sunset Plaza",
-    year: "2022",
-    summary: "New-build retail center with six tenant spaces, shared parking structure, and landscaped plaza.",
-    stats: [
-      { label: "Size", value: "22,500 sq ft" },
-      { label: "Duration", value: "9 months" },
-    ],
-    gradient: "linear-gradient(135deg, #1f3a5f 0%, #3a5a80 100%)",
-  },
-  {
-    slug: "cedar-hills-estates",
-    title: "Cedar Hills Estates — Phase 1",
+    slug: "sweet-home",
+    title: "Sweet Home",
     category: "Residential",
-    location: "Cedar Hills",
-    year: "2021",
-    summary: "First phase of a 12-home residential development featuring shared site infrastructure and utilities.",
-    stats: [
-      { label: "Units", value: "12 homes" },
-      { label: "Duration", value: "14 months" },
-    ],
-    gradient: "linear-gradient(135deg, #142033 0%, #2c5282 100%)",
+    location: "Shivamogga, Karnataka",
+    summary:
+      "A three-level home with a sculpted stone entry, timber slat screening, and a dramatic open-riser staircase framed in steel.",
+    images: ["/projects/sweet-home-night.jpg"],
+  },
+  {
+    slug: "modern-family-residence",
+    title: "Modern Family Residence",
+    category: "Residential",
+    location: "Shivamogga, Karnataka",
+    summary:
+      "A contemporary family home combining warm timber cladding with textured stone accents and layered cantilevered balconies.",
+    images: ["/projects/residence-modern-wood-night.jpg"],
+  },
+  {
+    slug: "rooftop-terrace-residence",
+    title: "Rooftop Terrace Residence",
+    category: "Residential",
+    location: "Shivamogga, Karnataka",
+    summary:
+      "A multi-level residence built around a shaded rooftop terrace, glass balustrades, and a lush tropical garden setting.",
+    images: ["/projects/rooftop-terrace-residence-day.jpg"],
+  },
+  {
+    slug: "dream-house",
+    title: "Dream House",
+    category: "Residential",
+    location: "Shivamogga, Karnataka",
+    summary:
+      "A compact modern home with a textured stone feature wall and accent lighting that makes a striking street presence after dark.",
+    images: ["/projects/dream-house-night.jpg"],
+  },
+  {
+    slug: "gokul-residence",
+    title: "Gokul Residence",
+    category: "Residential",
+    location: "Shivamogga, Karnataka",
+    summary:
+      "A narrow-plot home designed for Mr. Gokul, featuring CNC-cut timber gates, a rooftop pergola, and a circular window accent.",
+    images: ["/projects/gokul-residence-day.jpg"],
   },
 ];
