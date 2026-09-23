@@ -36,13 +36,13 @@ export default function Home() {
         <div className="hero__pattern" aria-hidden="true" />
         <div className="container hero__inner">
           <div className="hero__content">
-            <span className="eyebrow hero__eyebrow-in">Licensed General Contractor</span>
             <h1 className="hero__title-in">
               Building the Places <span>Where Life Happens</span>
             </h1>
             <p className="hero__text-in">
-              SV Construction and Interiors delivers residential, commercial, and industrial projects with
-              precision scheduling, transparent budgets, and craftsmanship built to last.
+              SV Construction and Interiors delivers turnkey projects, residential and commercial buildings,
+              and complete interiors, backed by dependable waterproofing solutions, with precise
+              scheduling, transparent budgets, and craftsmanship built to last.
             </p>
             <div className="hero__actions hero__actions-in">
               <Link to="/contact" className="btn btn--primary">

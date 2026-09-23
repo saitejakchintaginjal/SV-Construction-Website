@@ -18,8 +18,8 @@ export default function Footer() {
             </span>
           </Link>
           <p>
-            Licensed general contractor delivering residential, commercial, and industrial
-            projects with uncompromising quality and transparent communication since 2020.
+            Turnkey construction, residential and commercial buildings, interiors, and waterproofing
+            solutions, delivered with uncompromising quality and transparent communication since 2020.
           </p>
           <div className="footer__social">
             <a href="https://wa.me/919986680832" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><WhatsAppIcon /></a>
