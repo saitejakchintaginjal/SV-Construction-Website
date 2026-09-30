@@ -18,157 +18,232 @@
 }
 
 .cs-cloud--1 {
-  animation-duration: 42s;
-  animation-delay: -6s;
+  animation-duration: 46s;
+  animation-delay: -8s;
 }
 
 .cs-cloud--2 {
-  animation-duration: 58s;
-  animation-delay: -20s;
-}
-
-.cs-cloud--3 {
-  animation-duration: 50s;
-  animation-delay: -34s;
+  animation-duration: 62s;
+  animation-delay: -30s;
 }
 
 @keyframes cloudDrift {
-  from {
-    transform: translateX(-160px);
-  }
-  to {
-    transform: translateX(1360px);
-  }
+  from { transform: translateX(-160px); }
+  to { transform: translateX(1360px); }
 }
 
-/* Crane beacon light */
-.cs-crane-light {
-  animation: beacon 1.3s ease-in-out infinite alternate;
+/* Birds flying across */
+.cs-bird {
+  animation: birdFly linear infinite;
 }
 
-@keyframes beacon {
-  from {
-    opacity: 0.25;
-  }
-  to {
-    opacity: 1;
-  }
+.cs-bird--1 {
+  animation-duration: 22s;
+  animation-delay: -4s;
 }
 
-/* Trolley sliding along the jib */
-.cs-trolley {
-  animation: trolleySlide 5s ease-in-out infinite;
-  transform-box: view-box;
+.cs-bird--2 {
+  animation-duration: 30s;
+  animation-delay: -16s;
 }
 
-@keyframes trolleySlide {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(88px);
-  }
+@keyframes birdFly {
+  from { transform: translate(-40px, 110px); }
+  50% { transform: translate(600px, 80px); }
+  to { transform: translate(1240px, 120px); }
 }
 
-/* Hook lifting motion */
-.cs-hook {
-  animation: hookLift 2.4s ease-in-out infinite;
-  transform-box: view-box;
+/* Twinkling stars */
+.cs-star {
+  animation: twinkle 3s ease-in-out infinite alternate;
 }
 
-@keyframes hookLift {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(16px);
-  }
+.cs-star--2 { animation-delay: -1s; }
+.cs-star--3 { animation-delay: -2s; }
+
+@keyframes twinkle {
+  from { opacity: 0.2; }
+  to { opacity: 1; }
 }
 
-/* Building floors rising into place, looping like a construction timelapse */
-.cs-floor {
-  transform-box: view-box;
+/* Trees swaying in the breeze */
+.cs-tree {
+  animation: sway 4s ease-in-out infinite alternate;
+  transform-box: fill-box;
+  transform-origin: bottom center;
+}
+
+.cs-tree--2 {
+  animation-delay: -2s;
+}
+
+@keyframes sway {
+  from { rotate: -1.5deg; }
+  to { rotate: 1.5deg; }
+}
+
+/* Neighbours' windows flicker on and off */
+.cs-neighbour-window {
+  animation: neighbourGlow 6s ease-in-out infinite;
+}
+
+.cs-neighbour-window--2 {
+  animation-delay: -3s;
+}
+
+@keyframes neighbourGlow {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 0.9; }
+}
+
+/* Street lamp glow */
+.cs-lamp {
+  animation: lampGlow 2.6s ease-in-out infinite alternate;
+}
+
+@keyframes lampGlow {
+  from { opacity: 0.6; }
+  to { opacity: 1; }
+}
+
+/*
+ * House build timelapse (12s loop):
+ * foundation -> walls -> door & windows -> roof -> fence -> hold -> reset
+ */
+.cs-stage {
+  transform-box: fill-box;
+  opacity: 0;
+}
+
+.cs-stage--foundation {
   transform-origin: center;
-  animation: floorRise 7s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  animation: stageFoundation 12s ease-out infinite;
 }
 
-.cs-floor--1 { animation-delay: 0s; }
-.cs-floor--2 { animation-delay: 0.35s; }
-.cs-floor--3 { animation-delay: 0.7s; }
-.cs-floor--4 { animation-delay: 1.05s; }
-.cs-floor--5 { animation-delay: 1.4s; }
-.cs-floor--scaffold { animation: scaffoldRise 7s cubic-bezier(0.22, 1, 0.36, 1) infinite; animation-delay: 1.6s; }
-
-@keyframes floorRise {
-  0% {
-    opacity: 0;
-    transform: translateY(26px) scaleY(0.7);
-  }
-  10% {
-    opacity: 1;
-    transform: translateY(0) scaleY(1);
-  }
-  88% {
-    opacity: 1;
-    transform: translateY(0) scaleY(1);
-  }
-  96%, 100% {
-    opacity: 0;
-    transform: translateY(26px) scaleY(0.7);
-  }
+.cs-stage--walls {
+  transform-origin: bottom center;
+  animation: stageWalls 12s ease-out infinite;
 }
 
-@keyframes scaffoldRise {
-  0% {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  8% {
-    opacity: 0.85;
-    transform: translateY(0);
-  }
-  88% {
-    opacity: 0.85;
-    transform: translateY(0);
-  }
-  96%, 100% {
-    opacity: 0;
-    transform: translateY(18px);
-  }
+.cs-stage--details {
+  animation: stageDetails 12s ease-out infinite;
 }
 
-/* Delivery truck driving across the site */
-.cs-truck {
-  animation: truckDrive 9s ease-in-out infinite;
-  transform-box: view-box;
+.cs-stage--roof {
+  animation: stageRoof 12s cubic-bezier(0.3, 1.2, 0.5, 1) infinite;
 }
 
-@keyframes truckDrive {
-  0%, 8% {
-    transform: translateX(0);
-  }
-  45%, 55% {
-    transform: translateX(400px);
-  }
-  92%, 100% {
-    transform: translateX(0);
-  }
+.cs-stage--fence {
+  transform-origin: bottom center;
+  animation: stageFence 12s ease-out infinite;
+}
+
+@keyframes stageFoundation {
+  0% { opacity: 0; transform: scaleX(0.2); }
+  6%, 92% { opacity: 1; transform: scaleX(1); }
+  98%, 100% { opacity: 0; transform: scaleX(1); }
+}
+
+@keyframes stageWalls {
+  0%, 6% { opacity: 0; transform: scaleY(0); }
+  8% { opacity: 1; transform: scaleY(0); }
+  30%, 92% { opacity: 1; transform: scaleY(1); }
+  98%, 100% { opacity: 0; transform: scaleY(1); }
+}
+
+@keyframes stageDetails {
+  0%, 32% { opacity: 0; }
+  40%, 92% { opacity: 1; }
+  98%, 100% { opacity: 0; }
+}
+
+@keyframes stageRoof {
+  0%, 42% { opacity: 0; transform: translateY(-50px); }
+  55%, 92% { opacity: 1; transform: translateY(0); }
+  98%, 100% { opacity: 0; transform: translateY(0); }
+}
+
+@keyframes stageFence {
+  0%, 58% { opacity: 0; transform: scaleY(0); }
+  70%, 92% { opacity: 1; transform: scaleY(1); }
+  98%, 100% { opacity: 0; transform: scaleY(1); }
+}
+
+/* Lit windows once the house is finished */
+.cs-glow {
+  animation: windowLight 12s ease-in-out infinite;
+}
+
+.cs-glow--2 {
+  animation-delay: 0.4s;
+}
+
+@keyframes windowLight {
+  0%, 62% { opacity: 0; }
+  72%, 90% { opacity: 0.85; }
+  96%, 100% { opacity: 0; }
+}
+
+/* Chimney smoke appears after the roof is on */
+.cs-smoke__puff {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: smokeRise 4s ease-out infinite;
+}
+
+.cs-smoke__puff--2 { animation-delay: 1.3s; }
+.cs-smoke__puff--3 { animation-delay: 2.6s; }
+
+@keyframes smokeRise {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.6); }
+  15% { opacity: 0.6; }
+  100% { opacity: 0; transform: translate(22px, -46px) scale(2); }
+}
+
+/* Worker pushing a wheelbarrow of materials toward the house */
+.cs-worker {
+  animation: workerWalk 12s ease-in-out infinite;
+}
+
+@keyframes workerWalk {
+  0% { transform: translateX(120px); }
+  40% { transform: translateX(380px); }
+  55%, 60% { transform: translateX(400px); }
+  100% { transform: translateX(120px); }
+}
+
+.cs-wheel {
+  transform-box: fill-box;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .cs-cloud,
-  .cs-crane-light,
-  .cs-trolley,
-  .cs-hook,
-  .cs-floor,
-  .cs-floor--scaffold,
-  .cs-truck {
+  .cs-bird,
+  .cs-star,
+  .cs-tree,
+  .cs-neighbour-window,
+  .cs-lamp,
+  .cs-stage,
+  .cs-glow,
+  .cs-smoke__puff,
+  .cs-worker {
     animation: none;
   }
 
-  .cs-floor,
-  .cs-floor--scaffold {
+  .cs-stage {
     opacity: 1;
-    transform: none;
+  }
+
+  .cs-glow {
+    opacity: 0.8;
+  }
+
+  .cs-smoke__puff {
+    opacity: 0;
+  }
+
+  .cs-worker {
+    transform: translateX(120px);
   }
 }

@@ -25,10 +25,10 @@ export const projects: Project[] = [
     slug: "sweet-home",
     title: "Sweet Home",
     category: "Residential",
-    location: "Shivamogga, Karnataka",
+    location: "Gollarahalli, Honnali (T), Davangere (Dt), Karnataka",
     summary:
-      "A three-level home with a sculpted stone entry, timber slat screening, and a dramatic open-riser staircase framed in steel.",
-    images: ["/projects/sweet-home-night.jpg"],
+      "A 3,200 sq ft three-level home built for Mr. Raghavendra, featuring a sculpted stone entry, timber slat screening, and a dramatic open-riser staircase framed in steel.",
+    images: ["/projects/sweet-home-elevation.jpg"],
   },
   {
     slug: "modern-family-residence",
@@ -56,6 +56,15 @@ export const projects: Project[] = [
     summary:
       "A compact modern home with a textured stone feature wall and accent lighting that makes a striking street presence after dark.",
     images: ["/projects/dream-house-night.jpg"],
+  },
+  {
+    slug: "dream-home",
+    title: "Dream Home",
+    category: "Residential",
+    location: "Shakthidama, Shimoga (Dt), Karnataka",
+    summary:
+      "A 1,120 sq ft three-level home built for Miss Nisarga, featuring a dual open staircase, rooftop pergola, and a textured stone-and-plaster facade framed by a gated carport.",
+    images: ["/projects/dream-home-elevation.jpg"],
   },
   {
     slug: "gokul-residence",

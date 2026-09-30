@@ -5,12 +5,13 @@ import "./Lightbox.css";
 
 interface LightboxProps {
   project: Project;
+  captions?: string[];
   index: number;
   onClose: () => void;
   onNavigate: (index: number) => void;
 }
 
-export default function Lightbox({ project, index, onClose, onNavigate }: LightboxProps) {
+export default function Lightbox({ project, captions, index, onClose, onNavigate }: LightboxProps) {
   const total = project.images.length;
 
   const goPrev = useCallback(() => {
@@ -56,9 +57,9 @@ export default function Lightbox({ project, index, onClose, onNavigate }: Lightb
       )}
 
       <figure className="lightbox__figure" onClick={(e) => e.stopPropagation()}>
-        <img src={project.images[index]} alt={`${project.title} — photo ${index + 1} of ${total}`} />
+        <img src={project.images[index]} alt={captions?.[index] ?? `${project.title} — photo ${index + 1} of ${total}`} />
         <figcaption>
-          <span className="lightbox__title">{project.title}</span>
+          <span className="lightbox__title">{captions?.[index] ?? project.title}</span>
           {total > 1 && (
             <span className="lightbox__counter">
               {index + 1} / {total}

@@ -4,6 +4,7 @@ import ProjectCard from "../components/ProjectCard";
 import CTASection from "../components/CTASection";
 import Reveal from "../components/Reveal";
 import Lightbox from "../components/Lightbox";
+import DesignGallery from "../components/DesignGallery";
 import { projects, type Project } from "../data/projects";
 import "./Projects.css";
 
@@ -60,6 +61,8 @@ export default function Projects() {
           )}
         </div>
       </section>
+
+      <DesignGallery />
 
       <CTASection />
 

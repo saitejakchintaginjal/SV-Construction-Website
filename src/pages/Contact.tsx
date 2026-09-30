@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { Phone, Mail, MapPin, Clock, CheckCircle2 } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, CheckCircle2, MessageCircle } from "lucide-react";
 import PageHero from "../components/PageHero";
 import Reveal from "../components/Reveal";
 import { services } from "../data/services";
@@ -15,6 +15,9 @@ interface FormState {
 
 const initialState: FormState = { name: "", email: "", phone: "", service: "", message: "" };
 
+const WEB3FORMS_ACCESS_KEY = "ffe7582b-684c-44be-ac47-b364ed37bf92";
+const WHATSAPP_NUMBER = "919986680832";
+
 const contactDetails = [
   { icon: Phone, title: "Call Us", value: "+91 99866 80832", href: "tel:+919986680832" },
   { icon: Mail, title: "Email Us", value: "svconstruction267@gmail.com", href: "mailto:svconstruction267@gmail.com" },
@@ -26,6 +29,8 @@ export default function Contact() {
   const [form, setForm] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState(false);
 
   const handleChange = (field: keyof FormState) => (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -47,11 +52,47 @@ export default function Contact() {
     return Object.keys(nextErrors).length === 0;
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!validate()) return;
-    setSubmitted(true);
-    setForm(initialState);
+    if (sending || !validate()) return;
+    setSending(true);
+    setSendError(false);
+    setSubmitted(false);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `New enquiry from ${form.name} — ${form.service}`,
+          from_name: "SV Construction Website",
+          name: form.name,
+          email: form.email,
+          phone: form.phone || "Not provided",
+          service: form.service,
+          message: form.message,
+        }),
+      });
+      const result = await response.json();
+      if (!result.success) throw new Error(result.message);
+      setSubmitted(true);
+      setForm(initialState);
+    } catch {
+      setSendError(true);
+    } finally {
+      setSending(false);
+    }
+  };
+
+  const whatsappHref = () => {
+    const lines = [
+      "Hello SV Construction and Interiors, I'd like to enquire about a project.",
+      form.name && `Name: ${form.name}`,
+      form.phone && `Phone: ${form.phone}`,
+      form.service && `Service: ${form.service}`,
+      form.message && `Details: ${form.message}`,
+    ].filter(Boolean);
+    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`;
   };
 
   return (
@@ -108,7 +149,7 @@ export default function Contact() {
                     type="text"
                     value={form.name}
                     onChange={handleChange("name")}
-                    placeholder="Jane Doe"
+                    placeholder="Abc"
                   />
                   {errors.name && <span className="contact-form__error">{errors.name}</span>}
                 </div>
@@ -119,7 +160,7 @@ export default function Contact() {
                     type="email"
                     value={form.email}
                     onChange={handleChange("email")}
-                    placeholder="jane@email.com"
+                    placeholder="abc@gmail.com"
                   />
                   {errors.email && <span className="contact-form__error">{errors.email}</span>}
                 </div>
@@ -133,7 +174,7 @@ export default function Contact() {
                     type="tel"
                     value={form.phone}
                     onChange={handleChange("phone")}
-                    placeholder="+91 99866 80832"
+                    placeholder="7777777777"
                   />
                 </div>
                 <div className={`contact-form__field ${errors.service ? "contact-form__field--error" : ""}`}>
@@ -162,9 +203,24 @@ export default function Contact() {
                 {errors.message && <span className="contact-form__error">{errors.message}</span>}
               </div>
 
-              <button type="submit" className="btn btn--primary btn--block">
-                Submit Request
+              {sendError && (
+                <p className="contact-form__send-error" role="alert">
+                  Sorry, we couldn't send your request. Please try again, or contact us on WhatsApp or by phone.
+                </p>
+              )}
+
+              <button type="submit" className="btn btn--primary btn--block" disabled={sending}>
+                {sending ? "Sending…" : "Submit Request"}
               </button>
+
+              <a
+                className="btn btn--whatsapp btn--block"
+                href={whatsappHref()}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MessageCircle size={18} /> Chat on WhatsApp instead
+              </a>
             </form>
           </Reveal>
         </div>
