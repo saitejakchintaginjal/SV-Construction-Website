@@ -19,10 +19,14 @@
 .hero__inner {
   position: relative;
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 1fr;
   gap: 56px;
   align-items: center;
   padding: 72px 24px 48px;
+}
+
+.hero__content {
+  max-width: 640px;
 }
 
 /* Hero entrance choreography */
@@ -30,8 +34,7 @@
 .hero__title-in,
 .hero__text-in,
 .hero__actions-in,
-.hero__checklist-in,
-.hero__card-in {
+.hero__checklist-in {
   animation: heroRise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -40,7 +43,6 @@
 .hero__text-in { animation-delay: 0.28s; }
 .hero__actions-in { animation-delay: 0.4s; }
 .hero__checklist-in { animation-delay: 0.52s; }
-.hero__card-in { animation-delay: 0.35s; }
 
 @keyframes heroRise {
   from {
@@ -58,8 +60,7 @@
   .hero__title-in,
   .hero__text-in,
   .hero__actions-in,
-  .hero__checklist-in,
-  .hero__card-in {
+  .hero__checklist-in {
     animation: none;
   }
 }
@@ -111,145 +112,6 @@
 .hero__checklist svg {
   color: var(--color-amber-500);
   flex-shrink: 0;
-}
-
-.hero__card {
-  position: relative;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(12px);
-  border-radius: var(--radius-lg);
-  padding: 28px;
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease;
-}
-
-.hero__card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(245, 165, 36, 0.4);
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
-}
-
-.hero__card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 13px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.6);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: 20px;
-}
-
-.hero__card-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(52, 199, 89, 0.16);
-  color: #4ade80;
-  padding: 4px 10px;
-  border-radius: 999px;
-  text-transform: none;
-  letter-spacing: 0;
-}
-
-.hero__card-badge-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #4ade80;
-  animation: badgePulse 1.6s ease-in-out infinite;
-}
-
-@keyframes badgePulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(1.4); }
-}
-
-.hero__card-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 10px;
-}
-
-.hero__card-row span:first-child {
-  color: #fff;
-  font-weight: 700;
-  font-size: 15px;
-}
-
-.hero__card-row span:last-child {
-  color: var(--color-amber-500);
-  font-weight: 700;
-}
-
-.hero__progress {
-  height: 8px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12);
-  overflow: hidden;
-  margin-bottom: 28px;
-}
-
-.hero__progress-fill {
-  height: 100%;
-  width: 82%;
-  background: linear-gradient(90deg, var(--color-amber-600), var(--color-amber-500));
-  background-size: 200% 100%;
-  border-radius: 999px;
-  animation: progressFill 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both, progressShimmer 2.5s linear infinite;
-  transform-origin: left;
-}
-
-@keyframes progressFill {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 82%;
-  }
-}
-
-@keyframes progressShimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero__progress-fill {
-    animation: none;
-  }
-
-  .hero__card-badge-dot {
-    animation: none;
-  }
-}
-
-.hero__card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.hero__card-grid div {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.hero__card-value {
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 800;
-  color: #fff;
-}
-
-.hero__card-label {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.55);
 }
 
 /* Why us */

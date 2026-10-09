@@ -58,36 +58,6 @@ export default function Home() {
               <li><CheckCircle2 size={16} /> Dedicated project manager</li>
             </ul>
           </div>
-
-          <div className="hero__card hero__card-in">
-            <div className="hero__card-header">
-              <span>Current Project Status</span>
-              <span className="hero__card-badge">
-                <span className="hero__card-badge-dot" /> On Track
-              </span>
-            </div>
-            <div className="hero__card-row">
-              <span>Kanasu Residence</span>
-              <span>82%</span>
-            </div>
-            <div className="hero__progress">
-              <div className="hero__progress-fill" />
-            </div>
-            <div className="hero__card-grid">
-              <div>
-                <span className="hero__card-value">5</span>
-                <span className="hero__card-label">Months In</span>
-              </div>
-              <div>
-                <span className="hero__card-value">4,200</span>
-                <span className="hero__card-label">Sq Ft</span>
-              </div>
-              <div>
-                <span className="hero__card-value">0</span>
-                <span className="hero__card-label">Safety Incidents</span>
-              </div>
-            </div>
-          </div>
         </div>
 
         <ConstructionAnimation />
