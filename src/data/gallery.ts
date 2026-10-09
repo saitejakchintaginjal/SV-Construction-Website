@@ -23,10 +23,11 @@ export interface GalleryItem {
 export const galleryItems: GalleryItem[] = [
   { src: "/gallery/sweet-home-journey-collage.jpg", title: "Sweet Home — Proposed → Under Construction → Delivered", category: "Build Journey" },
   { src: "/gallery/dream-home-journey-collage.jpg", title: "Dream Home — Proposed → Under Construction → Delivered", category: "Build Journey" },
+  { src: "/gallery/ranjith-reddy-journey-collage.jpg", title: "Ranjith Reddy Residence — Proposed → Under Construction → Delivered", category: "Build Journey" },
   { src: "/gallery/sweet-home-proposed-elevation.jpg", title: "Sweet Home — Proposed Elevation", category: "Completed Work" },
   { src: "/projects/kanasu-residence-lounge.jpg", title: "Kanasu Residence — Reading Lounge", category: "Interior" },
   { src: "/projects/kanasu-residence-day.jpg", title: "Kanasu Residence — Day View", category: "Completed Work" },
-  { src: "/projects/kanasu-residence-night.jpg", title: "Kanasu Residence — Night View", category: "Completed Work" },
+  { src: "/projects/kanasu-residence-night.jpg", title: "Proposed 3D Elevation", category: "Completed Work" },
   { src: "/projects/residence-modern-wood-night.jpg", title: "Modern Family Residence", category: "Completed Work" },
   { src: "/projects/rooftop-terrace-residence-day.jpg", title: "Rooftop Terrace Residence", category: "Completed Work" },
   { src: "/projects/dream-house-night.jpg", title: "Dream House", category: "Completed Work" },

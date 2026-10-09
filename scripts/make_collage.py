@@ -21,6 +21,14 @@ PRESETS = {
         ],
         "out": "dream-home-journey-collage.jpg",
     },
+    "ranjith-reddy": {
+        "panels": [
+            ("ranjith-reddy-proposed.jpg", "PROPOSED"),
+            ("ranjith-reddy-under-construction.jpg", "UNDER CONSTRUCTION"),
+            ("ranjith-reddy-delivered.jpg", "DELIVERED"),
+        ],
+        "out": "ranjith-reddy-journey-collage.jpg",
+    },
 }
 
 preset_name = sys.argv[1] if len(sys.argv) > 1 else "sweet-home"

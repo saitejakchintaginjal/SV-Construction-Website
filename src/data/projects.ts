@@ -75,4 +75,13 @@ export const projects: Project[] = [
       "A narrow-plot home designed for Mr. Gokul, featuring CNC-cut timber gates, a rooftop pergola, and a circular window accent.",
     images: ["/projects/gokul-residence-day.jpg"],
   },
+  {
+    slug: "ranjith-reddy-residence",
+    title: "Ranjith Reddy Residence",
+    category: "Residential",
+    location: "Poonapalli, Hosur Taluk, Krishnagiri (Dt), Tamil Nadu",
+    summary:
+      "A 3,560 sq ft two-level home built for Mr. Ranjith Reddy, featuring a cantilevered rooftop pergola, a CNC-cut jali screen, and a clean white facade with timber-louvre gates.",
+    images: ["/projects/ranjith-reddy-residence.jpg"],
+  },
 ];
