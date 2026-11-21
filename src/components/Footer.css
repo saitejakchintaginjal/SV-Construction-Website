@@ -60,6 +60,13 @@
   margin-bottom: 24px;
 }
 
+.footer__col--brand p.footer__areas {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-amber-500);
+  margin-top: -10px;
+}
+
 .footer__social {
   display: flex;
   gap: 12px;

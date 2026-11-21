@@ -5,6 +5,10 @@ import ServiceCard from "../components/ServiceCard";
 import ProjectCard from "../components/ProjectCard";
 import CTASection from "../components/CTASection";
 import ConstructionAnimation from "../components/ConstructionAnimation";
+import ProjectsCarousel from "../components/ProjectsCarousel";
+import PlansSection from "../components/PlansSection";
+import TrustedBrands from "../components/TrustedBrands";
+import ServiceAreas from "../components/ServiceAreas";
 import Counter from "../components/Counter";
 import Reveal from "../components/Reveal";
 import { services } from "../data/services";
@@ -33,32 +37,36 @@ export default function Home() {
   return (
     <>
       <section className="hero">
-        <div className="hero__pattern" aria-hidden="true" />
-        <div className="container hero__inner">
-          <div className="hero__content">
-            <h1 className="hero__title-in">
-              Building the Places <span>Where Life Happens</span>
-            </h1>
-            <p className="hero__text-in">
-              SV Construction and Interiors delivers turnkey projects, residential and commercial buildings,
-              and complete interiors, backed by dependable waterproofing solutions, with precise
-              scheduling, transparent budgets, and craftsmanship built to last.
-            </p>
-            <div className="hero__actions hero__actions-in">
-              <Link to="/contact" className="btn btn--primary">
-                Request a Free Estimate <ArrowRight size={16} />
-              </Link>
-              <Link to="/projects" className="btn btn--outline">
-                View Our Projects
-              </Link>
+        <div className="hero__bg">
+          <div className="hero__pattern" aria-hidden="true" />
+          <div className="container hero__inner">
+            <div className="hero__content">
+              <h1 className="hero__title-in">
+                Building the Places <span>Where Life Happens</span>
+              </h1>
+              <p className="hero__text-in">
+                SV Construction and Interiors delivers turnkey projects, residential and commercial buildings,
+                and complete interiors, backed by dependable waterproofing solutions, with precise
+                scheduling, transparent budgets, and craftsmanship built to last.
+              </p>
+              <div className="hero__actions hero__actions-in">
+                <Link to="/contact" className="btn btn--primary">
+                  Request a Free Estimate <ArrowRight size={16} />
+                </Link>
+                <Link to="/projects" className="btn btn--outline">
+                  View Our Projects
+                </Link>
+              </div>
+              <ul className="hero__checklist hero__checklist-in">
+                <li><CheckCircle2 size={16} /> Free on-site consultation</li>
+                <li><CheckCircle2 size={16} /> Transparent, itemized bids</li>
+                <li><CheckCircle2 size={16} /> Dedicated project manager</li>
+              </ul>
             </div>
-            <ul className="hero__checklist hero__checklist-in">
-              <li><CheckCircle2 size={16} /> Free on-site consultation</li>
-              <li><CheckCircle2 size={16} /> Transparent, itemized bids</li>
-              <li><CheckCircle2 size={16} /> Dedicated project manager</li>
-            </ul>
           </div>
         </div>
+
+        <ProjectsCarousel />
 
         <ConstructionAnimation />
       </section>
@@ -90,7 +98,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section section--alt why-us">
+      <PlansSection />
+
+      <section className="section why-us">
         <div className="container why-us__grid">
           <Reveal variant="left" className="why-us__content">
             <span className="eyebrow">Why Choose SV Construction and Interiors</span>
@@ -126,7 +136,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
+      <TrustedBrands />
+
+      <section className="section section--alt">
         <div className="container">
           <Reveal className="section-heading section-heading--center">
             <span className="eyebrow">Featured Work</span>
@@ -147,6 +159,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ServiceAreas />
 
       <CTASection />
     </>

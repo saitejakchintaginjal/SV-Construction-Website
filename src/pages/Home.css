@@ -2,6 +2,13 @@
   position: relative;
   background: linear-gradient(160deg, var(--color-navy-950) 0%, var(--color-navy-800) 60%, var(--color-navy-700) 100%);
   overflow: hidden;
+}
+
+.hero__bg {
+  position: relative;
+  background:
+    linear-gradient(160deg, rgba(10, 20, 32, 0.78) 0%, rgba(15, 31, 51, 0.68) 55%, rgba(31, 58, 95, 0.58) 100%),
+    url("/projects/dream-home-elevation.jpg") center / cover no-repeat;
   padding-top: 24px;
 }
 

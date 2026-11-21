@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { services } from "../data/services";
+import { serviceAreas } from "../data/serviceAreas";
 import { FacebookIcon, LinkedinIcon, InstagramIcon, WhatsAppIcon } from "./brand-icons";
 import "./Footer.css";
 
@@ -21,6 +22,7 @@ export default function Footer() {
             Turnkey construction, residential and commercial buildings, interiors, and waterproofing
             solutions, delivered with uncompromising quality and transparent communication since 2020.
           </p>
+          <p className="footer__areas">Serving {serviceAreas.join(", ")}</p>
           <div className="footer__social">
             <a href="https://wa.me/919986680832" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><WhatsAppIcon /></a>
             <a href="https://instagram.com/svconstruction" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><InstagramIcon /></a>
